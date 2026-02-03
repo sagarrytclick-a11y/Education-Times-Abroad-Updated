@@ -5,7 +5,8 @@ import {
   PlayCircle, Star, Check, ShieldCheck,
   GraduationCap, TrendingUp, MoveRight,
   MapPin, Phone, Mail, ArrowUpRight,
-  Calendar, Users, Award, Globe
+  Calendar, Users, Award, Globe, CheckCircle2,
+  ArrowRight
 } from 'lucide-react';
 import { useFormModal } from '@/context/FormModalContext';
 
@@ -30,79 +31,79 @@ interface Value {
 
 // --- Data ---
 const timeline: TimelineItem[] = [
-  { year: "2012", title: "Foundation in London", description: "Established to bridge the gap between talented students and top UK universities." },
-  { year: "2016", title: "Global Expansion", description: "Expanded operations to Canada, Australia, and the US, partnering with 150+ institutions." },
-  { year: "2022", title: "Digital Transformation", description: "Launched our AI-powered student portal to streamline applications." },
+  { year: "2018", title: "Foundation in Delhi", description: "Started with a mission to make MBBS abroad accessible and affordable for Indian students." },
+  { year: "2020", title: "Expansion to Medical Education", description: "Partnered with top NMC & WHO approved universities across Bangladesh, Russia, and Georgia." },
+  { year: "2023", title: "Digital Transformation", description: "Launched our student portal for seamless applications and real-time tracking." },
 ];
 
 const experts: Expert[] = [
-  { name: "James Carter", role: "Senior Counselor (UK)", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop" },
-  { name: "Sarah Jenkins", role: "Visa Specialist", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" },
-  { name: "Michael Chen", role: "University Relations", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop" },
-  { name: "Priya Patel", role: "Student Success Lead", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop" },
+  { name: "Dr. Rajesh Kumar", role: "Medical Education Director", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop" },
+  { name: "Priya Sharma", role: "Student Counselor", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" },
+  { name: "Amit Patel", role: "Visa Specialist", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop" },
+  { name: "Sarah Johnson", role: "International Relations", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop" },
 ];
 
 const values = [
   {
-    title: "Integrity in Every Recommendation",
+    title: "Zero Donation Policy",
     description:
-      "We believe education decisions shape lives. Our guidance is driven by honesty, transparency, and what is truly best for the student — not commissions or shortcuts.",
+      "We believe in transparent education costs. No hidden charges, no donation fees - only genuine tuition fees for quality medical education.",
     subtext:
-      "This principle has earned us trust across generations of students and parents."
+      "Making MBBS abroad affordable for every deserving student."
   },
   {
-    title: "Experience-Driven Expertise",
+    title: "NMC & WHO Approved Universities",
     description:
-      "With 50+ years in international education counseling, our advice is grounded in real outcomes, evolving regulations, and deep institutional knowledge.",
+      "All our partner universities are approved by NMC (National Medical Commission) and WHO, ensuring your degree is valid globally.",
     subtext:
-      "Experience allows us to anticipate challenges before they arise."
+      "Your medical career is secure with recognized degrees."
   },
   {
-    title: "Student-Centric Approach",
+    title: "Complete End-to-End Support",
     description:
-      "Every student’s journey is unique. We focus on individual goals, academic strengths, financial considerations, and long-term career outcomes.",
+      "From university selection to visa processing, accommodation to local support - we handle everything for your smooth journey.",
     subtext:
-      "Personalized counseling has been central to our success for decades."
+      "Focus on your studies while we handle the logistics."
   },
   {
-    title: "Long-Term Responsibility",
+    title: "Indian Food & Hostel Guarantee",
     description:
-      "Our role does not end with admissions. We take responsibility for guiding students toward sustainable academic and professional futures.",
+      "We ensure comfortable accommodation with Indian food facilities, making your stay away from home feel like home.",
     subtext:
-      "Our legacy is built on student success, not volume."
+      "Your comfort and well-being are our top priorities."
   }
 ];
 
 const legacyTimeline = [
   {
-    year: "1974",
-    title: "Foundation Built on Academic Integrity",
+    year: "2018",
+    title: "Started with Medical Focus",
     description:
-      "Established with a singular mission — to provide honest, student-first guidance for overseas education when reliable information was limited."
+      "Founded with a clear vision - to help Indian students pursue MBBS abroad without financial burden."
   },
   {
-    year: "1988",
-    title: "National Expansion Across India",
+    year: "2019",
+    title: "Partnership with Top Universities",
     description:
-      "Expanded counseling services nationwide, helping thousands of students make informed academic decisions with confidence."
+      "Built strong relationships with NMC approved universities in Bangladesh, Russia, Georgia, and other popular destinations."
   },
   {
-    year: "2002",
-    title: "Global University Partnerships",
+    year: "2021",
+    title: "500+ Students Placed",
     description:
-      "Built strong partnerships with leading universities across the UK, USA, Canada, Australia, and Europe."
+      "Successfully placed over 500 students in top medical universities with 100% admission success rate."
   },
   {
-    year: "2012",
-    title: "Trusted by Generations of Families",
+    year: "2022",
+    title: "Expanded Support Services",
     description:
-      "Became a legacy brand, trusted by students, parents, and institutions across multiple generations."
+      "Added complete visa support, accommodation assistance, and local guidance for students and parents."
   },
   {
     year: "Today",
-    title: "50+ Years of Proven Student Success",
+    title: "Leading MBBS Abroad Consultancy",
     description:
-      "With five decades of experience, we continue to guide students globally with transparency, expertise, and measurable outcomes."
+      "Trusted by thousands of students and parents for transparent, affordable, and reliable medical education abroad."
   }
 ];
 
@@ -117,42 +118,43 @@ export default function AboutPage() {
   {/* LEFT CONTENT */}
   <div>
     <span className="text-sm font-semibold tracking-widest text-blue-700 uppercase">
-      About Us
+      About Education Times Abroad
     </span>
 
     <h1 className="mt-6 text-xl sm:text-5xl lg:text-4xl font-bold text-slate-900 leading-tight">
-      50 Years of Guiding Students<br />
-      Toward Global Education Excellence
+      Making MBBS Abroad<br />
+      <span className="text-blue-600">Accessible & Affordable</span>
     </h1>
 
     <p className="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
-      For over five decades, we have helped students and families navigate
-      international education with clarity, integrity, and confidence.
-      Our guidance is built on experience — not trends.
+      We are India's leading consultancy for MBBS abroad, helping students 
+      secure admissions in NMC & WHO approved universities with zero 
+      donation and complete support.
     </p>
 
     {/* STATS */}
     <div className="mt-10 grid grid-cols-3 gap-8 max-w-xl">
       <div>
-        <p className="text-3xl font-bold text-slate-900">50+</p>
-        <p className="text-sm text-slate-500 mt-1">Years of Experience</p>
+        <p className="text-3xl font-bold text-slate-900">1000+</p>
+        <p className="text-sm text-slate-500 mt-1">Students Placed</p>
       </div>
       <div>
-        <p className="text-3xl font-bold text-slate-900">100,000+</p>
-        <p className="text-sm text-slate-500 mt-1">Students Guided</p>
+        <p className="text-3xl font-bold text-slate-900">15+</p>
+        <p className="text-sm text-slate-500 mt-1">Countries</p>
       </div>
       <div>
-        <p className="text-3xl font-bold text-slate-900">20+</p>
-        <p className="text-sm text-slate-500 mt-1">Study Destinations</p>
+        <p className="text-3xl font-bold text-slate-900">98%</p>
+        <p className="text-sm text-slate-500 mt-1">Success Rate</p>
       </div>
     </div>
 
     {/* CTA */}
     <div className="mt-12">
       <button
-        className="px-8 py-4 rounded-full bg-blue-700 hover:bg-blue-800 text-white font-semibold transition-colors"
+        onClick={openModal}
+        className="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors"
       >
-        Learn About Our Legacy
+        Start Your MBBS Journey
       </button>
     </div>
   </div>
@@ -161,9 +163,8 @@ export default function AboutPage() {
   <div className="relative">
     <div className="rounded-3xl overflow-hidden border border-slate-200 bg-slate-50">
       <img
-        src="/student-with-lightbulb-digital-art-style-education-day.jpg
-"
-        alt="Students guided toward global education"
+        src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
+        alt="Medical students abroad"
         className="w-full h-full object-cover"
       />
     </div>
@@ -172,21 +173,19 @@ export default function AboutPage() {
     <div className="absolute -bottom-6 left-6 bg-white border border-slate-200 rounded-2xl px-5 py-4 shadow-sm">
       <p className="text-lg font-bold text-slate-900 leading-none">4.9 / 5</p>
       <p className="text-xs text-slate-500 mt-1">
-        Rated by global students & families
+        Rated by medical students & parents
       </p>
     </div>
   </div>
 </section>
 
-
-
       {/* Stats Bar */}
       <section className="max-w-7xl mx-auto px-6 py-12 border-y border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
-          { label: "Years Experience", value: "10+" },
-          { label: "Partner Universities", value: "500+" },
-          { label: "Visa Success Rate", value: "98%" },
-          { label: "Students Placed", value: "10,000+" }
+          { label: "NMC Approved", value: "100%" },
+          { label: "Partner Universities", value: "50+" },
+          { label: "Visa Success Rate", value: "99%" },
+          { label: "Zero Donation", value: "Guaranteed" }
         ].map((stat, i) => (
           <div key={i} className="text-center">
             <h3 className="text-3xl font-bold text-blue-600">{stat.value}</h3>
@@ -201,13 +200,15 @@ export default function AboutPage() {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                From Vision to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">Reality</span>
+                Your Medical Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">Starts Here</span>
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed mb-6">
-                Founded in 2012, AlphaWorld Education began with a simple mission: to make quality international education accessible to every ambitious student, regardless of their background or location.
+                Founded in 2018, Education Times Abroad specializes in MBBS admissions 
+                with a focus on transparency, affordability, and student success.
               </p>
               <p className="text-slate-500 text-lg leading-relaxed">
-                Today, we are proud to have helped over 10,000 students from 50+ countries achieve their dreams of studying at world-class universities across the UK, Canada, Australia, and the United States.
+                We've helped over 1000+ students fulfill their dreams of becoming doctors 
+                by securing admissions in top medical universities across 15+ countries.
               </p>
             </div>
 
@@ -215,21 +216,21 @@ export default function AboutPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="bg-blue-100 p-2 rounded-lg">
-                  <Check className="w-5 h-5 text-blue-600" />
+                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
                 </div>
-                <span className="text-slate-700 font-medium">99% Visa Success Rate</span>
+                <span className="text-slate-700 font-medium">Zero Donation Universities</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-blue-100 p-2 rounded-lg">
                   <Award className="w-5 h-5 text-blue-600" />
                 </div>
-                <span className="text-slate-700 font-medium">$2.5M+ in Scholarships Secured</span>
+                <span className="text-slate-700 font-medium">NMC & WHO Approved Only</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="bg-purple-100 p-2 rounded-lg">
                   <Users className="w-5 h-5 text-purple-600" />
                 </div>
-                <span className="text-slate-700 font-medium">500+ University Partnerships</span>
+                <span className="text-slate-700 font-medium">Indian Food & Hostel</span>
               </div>
             </div>
           </div>
@@ -237,8 +238,8 @@ export default function AboutPage() {
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-8 shadow-xl">
               <Image
-                src="https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Our Story"
+                src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=500&h=400&fit=crop"
+                alt="Medical Education"
                 width={500}
                 height={400}
                 className="rounded-2xl shadow-lg"
@@ -254,14 +255,14 @@ export default function AboutPage() {
       {/* Header */}
       <div className="max-w-3xl mb-20">
         <span className="text-sm font-semibold tracking-wider text-blue-700 uppercase">
-          Our Legacy
+          Our Journey
         </span>
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mt-4 mb-6 leading-tight">
-          50 Years of Guiding Students Toward Global Education
+          Building Medical Careers Since 2018
         </h2>
         <p className="text-lg text-slate-600 leading-relaxed">
-          For over five decades, we have helped students navigate international
-          education with integrity, expertise, and long-term success.
+          From a small startup to India's trusted MBBS abroad consultancy, 
+          our journey has been defined by student success.
         </p>
       </div>
 
@@ -301,8 +302,6 @@ export default function AboutPage() {
       </div>
     </section>
 
-
-
       {/* Our Values Section */}
     <section className="max-w-7xl mx-auto px-6 py-28 bg-white">
   {/* Header */}
@@ -312,13 +311,12 @@ export default function AboutPage() {
   </span>
 
   <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mt-4 mb-6 leading-tight">
-    Principles Shaped by 50 Years of Educational Guidance
+    Principles That Guide Every Student's Success
   </h2>
 
   <p className="text-lg text-slate-600 leading-relaxed">
-    Over five decades, our values have been refined through experience,
-    responsibility, and a deep understanding of student aspirations.
-    These principles guide every decision we make.
+    Our values are built around transparency, affordability, and complete 
+    student support for their medical education journey.
   </p>
 </div>
 
@@ -352,40 +350,24 @@ export default function AboutPage() {
   </div>
 </section>
 
-
-      {/* Meet Our Experts */}
-      {/* <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex justify-between items-end mb-12">
-          <div>
-            <h2 className="text-4xl font-bold text-slate-900">Meet Our Experts</h2>
-            <p className="text-slate-500 mt-2">The dedicated minds guiding your journey.</p>
-          </div>
-          <button className="group flex items-center gap-2 text-green-600 font-bold hover:gap-3 transition-all">
-            View All Members <MoveRight className="w-5 h-5" />
+      {/* Contact CTA */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-12 text-center text-white">
+          <h2 className="text-4xl font-bold mb-6">
+            Ready to Start Your MBBS Journey?
+          </h2>
+          <p className="text-xl mb-8 text-blue-100">
+            Get expert guidance for NMC approved universities with zero donation
+          </p>
+          <button
+            onClick={openModal}
+            className="inline-flex items-center gap-2 bg-white text-blue-600 font-bold rounded-2xl transition-all duration-300 px-8 py-4 text-lg hover:bg-blue-50"
+          >
+            Get Free Consultation
+            <ArrowRight size={20} />
           </button>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {experts.map((expert, i) => (
-            <div key={i} className="group relative rounded-[2rem] overflow-hidden aspect-[3/4] bg-slate-200 shadow-sm">
-              <Image
-                src={expert.image}
-                alt={expert.name}
-                fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute bottom-0 left-0 p-8 text-white">
-                <h4 className="text-xl font-bold">{expert.name}</h4>
-                <p className="text-sm text-slate-300">{expert.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-      {/* Contact CTA */}
-    
+      </section>
 
     </main>
   );
