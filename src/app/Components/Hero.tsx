@@ -1,147 +1,143 @@
 "use client";
 
 import React from 'react';
-import { Check, ArrowRight, Play, Star, ShieldCheck, GraduationCap, Globe2, BookOpen } from 'lucide-react';
+import { ArrowRight, GraduationCap, Globe, ShieldCheck, CheckCircle2, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-blue-50 pt-20 pb-16 sm:pt-15 sm:pb-15 overflow-hidden">
-      
-      {/* Subtle Background Elements to fill white space */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-100/50 hidden lg:block -skew-x-6 translate-x-32" />
-      <div className="absolute top-40 left-10 w-64 h-64 bg-blue-200 rounded-full blur-[100px] -z-10" />
+    <section id="home" className="relative min-h-screen flex items-center bg-[#F8FAFC] pt-20 pb-16 overflow-hidden">
+
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 -skew-x-12 transform origin-top" />
+      <div className="absolute top-40 -left-20 w-80 h-80 bg-blue-400 rounded-full blur-[100px] opacity-20 animate-pulse" />
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT COLUMN (7/12) - More Text & Info */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            
+          {/* LEFT COLUMN - Messaging */}
+          <div className="flex flex-col items-start text-left">
+
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
-              <ShieldCheck size={16} className="text-blue-600" />
-              <span className="text-xs font-black text-blue-700 uppercase tracking-widest">Study Abroad Consultancy</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-[11px] font-bold text-slate-600 uppercase tracking-widest">NMC & WHO Approved Universities</span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6">
-              Your Dream University <br />
-              <span className="relative inline-block text-blue-600">
-                Awaits You
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 358 12" fill="none">
-                  <path d="M3 9C118.5 3 234 3 355 9" stroke="#2563EB" strokeWidth="6" strokeLinecap="round"/>
-                </svg>
+            <h1 className="text-5xl md:text-6xl xl:text-[75px] font-black text-slate-900 leading-[1.05] tracking-tight mb-8">
+              Your Global Degree <br />
+              <span className="relative inline-block">
+                <span className="relative z-10 text-blue-600">Starts Overseas</span>
+                {/* Abstract underline effect */}
+                <span className="absolute bottom-2 left-0 w-full h-4 bg-blue-100 -z-10 rounded-full opacity-60"></span>
+              </span>
+              <br />
+              <span className="relative inline-flex flex-wrap items-center gap-3">
+                {/* Universal Highlight */}
+                <span className="relative z-10 px-5 py-1.5 text-white bg-slate-900 rounded-2xl shadow-xl shadow-slate-200">
+                  Zero Donation
+                </span>
+                {/* Sub-text inside heading for clarity */}
+                <span className="text-2xl md:text-3xl font-bold text-slate-400">
+                  MBBS • Engineering • MBA
+                </span>
               </span>
             </h1>
 
-            {/* Subtext */}
-            <p className="text-base sm:text-lg text-slate-500 max-w-xl leading-relaxed font-medium mb-8">
-              Complete study abroad guidance from <span className="text-slate-900 font-bold">university selection to visa approval</span>. 
-              We help you get admitted to top universities in 50+ countries.
+            <p className="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed mb-10">
+              Low-cost MBBS abroad with world-class clinical exposure. We help you find the best medical colleges in <span className="text-slate-900 font-semibold underline decoration-blue-400">Bangladesh, Russia, Georgia</span> & more.
             </p>
 
-            {/* Service Categories */}
-            <div className="mb-10">
-              <div className="text-xs font-black text-slate-400 uppercase tracking-wider mb-4">Our Services Include</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 sm:gap-x-8 w-full max-w-lg">
-                {[
-                  { icon: BookOpen, text: "University Admissions" },
-                  { icon: ShieldCheck, text: "Visa Application Support" },
-                  { icon: GraduationCap, text: "Scholarship Guidance" },
-                  { icon: Globe2, text: "Pre-Departure Briefing" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="bg-blue-100 p-2 rounded-lg">
-                      <item.icon size={14} className="text-blue-600" strokeWidth={2.5} />
-                    </div>
-                    <span className="text-sm font-bold text-slate-700">{item.text}</span>
-                  </div>
-                ))}
-              </div>
+            {/* Feature Checkmarks (Quick Connectivity for Parents) */}
+            <div className="grid grid-cols-2 gap-y-3 gap-x-6 mb-10">
+              {['100% Admission Mail', 'Lowest Tuition Fees', 'Verified Hostels', 'Indian Food Available'].map((text) => (
+                <div key={text} className="flex items-center gap-2">
+                  <CheckCircle2 size={18} className="text-green-500 flex-shrink-0" />
+                  <span className="text-sm font-medium text-slate-700">{text}</span>
+                </div>
+              ))}
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-8 sm:mb-12 w-full sm:w-auto">
-              <Link href="/countries" className="group w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
-                <GraduationCap className="w-4 h-4" />
-                Find Your University 
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <Link
+                href="/countries"
+                className="group w-full sm:w-auto px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-400/30 flex items-center justify-center gap-3 text-lg hover:-translate-y-1"
+              >
+                Find My College
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              <button className="group flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-colors">
-                <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
-                  <Play size={16} fill="currentColor" />
-                </div>
-                <span className="text-xs sm:text-sm font-bold text-slate-900">Free Consultation</span>
-              </button>
-            </div>
-
-            {/* Bottom Mini-Stats */}
-            <div className="flex items-center gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-slate-100 w-full justify-center lg:justify-start">
-               <div className="flex flex-col">
-                  <span className="text-xl sm:text-2xl font-black text-slate-900">15,000+</span>
-                  <span className="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Students Helped</span>
-               </div>
-               <div className="flex flex-col border-x border-slate-100 px-4 sm:px-8">
-                  <span className="text-xl sm:text-2xl font-black text-slate-900">800+</span>
-                  <span className="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Partner Universities</span>
-               </div>
-               <div className="flex flex-col">
-                  <span className="text-xl sm:text-2xl font-black text-slate-900">98%</span>
-                  <span className="text-[8px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Success Rate</span>
-               </div>
+              <Link
+                href="/whatsapp-consult"
+                className="group w-full sm:w-auto px-8 py-5 rounded-2xl border-2 border-slate-200 bg-white hover:border-blue-600 transition-all flex items-center justify-center gap-3"
+              >
+                <Globe size={20} className="text-blue-600" />
+                <span className="text-base font-bold text-slate-900">Explore Countries</span>
+              </Link>
             </div>
           </div>
 
-          {/* RIGHT COLUMN (5/12) - Balanced Image Size */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0">
-            <div className="relative w-full max-w-[350px] sm:max-w-[450px]">
-              
-              {/* Image with Decorative Frame */}
-              <div className="relative z-10 rounded-[2rem] sm:rounded-[3rem] overflow-hidden border-[6px] sm:border-[10px] border-white shadow-2xl rotate-2 aspect-[4/5]">
-                <img
-                  src="/Hero/herosection.png"
-                  alt="Student Success"
-                  className="w-full h-full object-cover"
-                />
+          {/* RIGHT COLUMN - Visuals */}
+          <div className="relative pt-10 lg:pt-0">
+            {/* Experience Card (Floating) */}
+            <div className="absolute -top-4 -right-4 md:right-0 z-20 bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 flex items-center gap-4 animate-float">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                <ShieldCheck size={28} />
               </div>
-
-              {/* Success Badge (Smaller & Clean) */}
-              <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-white z-[10] p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-50 flex flex-col items-center animate-bounce-slow">
-                 <div className="bg-blue-100 p-1.5 sm:p-2 rounded-full mb-2">
-                    <Star size={20} className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" fill="currentColor" />
-                 </div>
-                 <span className="text-lg sm:text-xl font-black text-slate-900 leading-none">98%</span>
-                 <span className="text-[7px] sm:text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-1">Visa Success</span>
+              <div>
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-tighter">Guaranteed</p>
+                <p className="text-sm font-black text-slate-900">Direct Admissions</p>
               </div>
+            </div>
 
-              {/* Next Intake Box (Smaller & Clean) */}
-              <div className="absolute -bottom-6 sm:-bottom-8 -left-6 sm:-left-8 bg-slate-900 text-white p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-2xl w-40 sm:w-48 z-[10]">
-                <p className="text-[8px] sm:text-[9px] text-blue-400 font-bold uppercase mb-2">Upcoming Intake</p>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="font-medium text-xs">Sept 2026</span>
-                  <span className="bg-blue-600 px-1.5 sm:px-2 py-0.5 rounded-full text-[7px] sm:text-[8px] font-black uppercase">Active</span>
+            <div className="grid grid-cols-12 gap-4 h-[450px] md:h-[550px]">
+              {/* Main Image - Medical Students */}
+              <div className="col-span-8 h-full relative group">
+                <div className="absolute inset-0 bg-blue-600 rounded-[2rem] rotate-3 transition-transform group-hover:rotate-1" />
+                <div className="relative h-full rounded-[2rem] overflow-hidden border-4 border-white shadow-xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+                    alt="MBBS Students Abroad"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
+                    <p className="text-white font-medium italic text-sm">"Safe campus and quality education for Indian students"</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Grid Background behind image */}
-              <div className="absolute -inset-10 bg-[radial-gradient(#dbeafe_1.5px,transparent_1.5px)] [background-size:20px_20px] opacity-70 -z-10 translate-x-4 translate-y-4" />
+              {/* Side Images */}
+              <div className="col-span-4 flex flex-col gap-4 h-full">
+                <div className="h-1/2 rounded-[2rem] overflow-hidden border-4 border-white shadow-lg">
+                  <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&q=80" className="w-full h-full object-cover" alt="Hospital" />
+                </div>
+                <div className="h-1/2 rounded-[2rem] overflow-hidden border-4 border-white shadow-lg bg-blue-600 flex items-center justify-center text-center p-4">
+                  <div>
+                    <p className="text-white font-black text-2xl">100%</p>
+                    <p className="text-blue-100 text-[10px] font-bold uppercase">Transparency</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Country Tags Overlay */}
+            <div className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start">
+              {['Bangladesh', 'Russia', 'Uzbekistan', 'Georgia', 'Egypt', 'Kazakhstan'].map((country) => (
+                <span key={country} className="px-4 py-2 bg-white rounded-xl text-sm font-bold text-slate-700 shadow-sm border border-slate-100 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                  {country}
+                </span>
+              ))}
             </div>
           </div>
 
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 4s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 };
